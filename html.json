@@ -1,0 +1,21 @@
+{
+	"Formulaire label input": {
+		"prefix": "div.label.input",
+		"body": [
+		  "<div>",
+		  "  <label for=\"${1:example}\">${2:example}</label>",
+		  "  <input type=\"text\" name=\"${1:example}\" id =\"${1:example}\"/>",
+		  "</div>"
+		],
+		"description": "Formulaire label input"
+	  },
+	  "<?php": {
+		"prefix": "<?",
+		"body": [
+		  "<?php",
+		  "${1:example}",
+		  "?>"
+		],
+		"description": "<?php"
+	  },
+}

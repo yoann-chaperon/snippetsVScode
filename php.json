@@ -1,0 +1,61 @@
+{
+	"echo <pre> print_r </p><br>": {
+		"prefix": "epb",
+		"body": [
+		  "echo '<pre>${1:example} ';",
+		  "print_r(${2:example});                ",
+		  "echo '</pre><br>';"
+		],
+		"description": "echo <pre> print_r </p><br>"
+	  },
+	  
+	  "'<br>';": {
+		"prefix": "<br",
+		"body": [
+		  "'<br>';"
+		],
+		"description": "'<br>';"
+	  },
+
+	  "<?php echo $..['.']?>": {
+		"prefix": "<?pe?>",
+		"body": [
+		  "<?php echo ${1:example}['${2:example}']?>"
+		],
+		"description": "<?php echo $..['.']?>"
+	  },
+	  
+	  "try connection": {
+		"prefix": "<tryco",
+		"body": [
+		  "try {",
+		  "    $bdd = new PDO('mysql:host=localhost;dbname=openclass;charset=utf8', 'root', 'guizmo');",
+		  "}",
+		  "catch(Exception $e) {",
+		  "    die('Erreur :'.$e ->getMessage());",
+		  "}"
+		],
+		"description": "try connection"
+	  },
+
+	  "connexion": {
+		"prefix": "connexion",
+		"body": [
+		  "$serveur = \"${1:example}\";",
+		  "    $login ='${2:example}';",
+		  "    $pass = '${3:example}';",
+		  "    ",
+		  "    try {",
+		  "        $connexion = new PDO(\"mysql:host=$serveur;dbname=${4:example}\",$login, $pass);",
+		  "        $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);",
+		  "    }",
+		  "    catch(PDOException $e){",
+		  "        echo'Erreur de connection : '.$e->getMessage();",
+		  "    }",
+		  "",
+		  "    ${5:example}"
+		],
+		"description": "connexion"
+	  }
+	  
+}
